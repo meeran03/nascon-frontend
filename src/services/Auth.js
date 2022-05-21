@@ -1,9 +1,12 @@
 import AXIOS from "./AXIOS";
 import Cookie from "js-cookie";
+import { userState } from "../states/userState";
 
 export async function login(email, password) {
   AXIOS.post("/veterans/login", { email, password })
     .then((res) => {
+      console.log(res.data);
+      userState.set({ token: res.data.token, profile: res.data.veteran });
       return res.data;
     })
     .catch((err) => {
@@ -32,6 +35,7 @@ export async function register(data) {
   AXIOS.post("/veterans/register", { ...data })
     .then((res) => {
       console.log(res.data);
+      userState.set({ token: res.data.token, profile: res.data.veteran });
       Cookie.set("token", res.data.token);
       return res.data;
     })
