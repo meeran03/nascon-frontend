@@ -10,6 +10,8 @@ import { Route } from "react-router-dom";
 import { userState } from "./states/userState";
 import { Redirect } from "react-router-dom";
 import HomePage from "./Pages/Home";
+import ChatPage from "./Pages/Chat";
+import OrganizationPage from "./Pages/Organization";
 function App() {
   const [user, setUser] = userState.use();
   return (
@@ -20,6 +22,16 @@ function App() {
         </Route>
         <Route exact path="/profile">
           {user.token === false ? <Redirect to="/login" /> : <ProfilePage />}
+        </Route>
+        <Route exact path="/chat">
+          {user.token === false ? <Redirect to="/login" /> : <ChatPage />}
+        </Route>
+        <Route exact path="/organizations">
+          {user.token === false ? (
+            <Redirect to="/login" />
+          ) : (
+            <OrganizationPage />
+          )}
         </Route>
         <Route to="/login" component={LoginPage} />
         <Route to="/register" component={RegisterPage} />

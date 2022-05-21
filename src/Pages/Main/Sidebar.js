@@ -62,7 +62,8 @@ function Sidebar() {
       </div>
 
       <div className=" my-2 p-2 flex ">
-        <a
+        <button
+          onClick={() => history.push("/chat")}
           href="#"
           className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
         >
@@ -83,11 +84,12 @@ function Sidebar() {
             </svg>
           </span>
           <span className="ml-2 text-sm tracking-wide truncate">Messages</span>
-        </a>
+        </button>
       </div>
 
       <div className=" my-2 p-2 flex ">
-        <a
+        <button
+          onClick={() => history.push("/followers")}
           href="#"
           className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
         >
@@ -111,12 +113,13 @@ function Sidebar() {
           <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-green-500 bg-green-50 rounded-full">
             (15)
           </span>
-        </a>
+        </button>
       </div>
 
       <div className=" my-2 p-2 flex ">
-        <a
+        <button
           href="#"
+          onClick={() => history.push("/organizations")}
           className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
         >
           <span className="inline-flex justify-center items-center ml-4">
@@ -138,7 +141,7 @@ function Sidebar() {
           <span className="ml-2 text-sm tracking-wide truncate">
             Organizations
           </span>
-        </a>
+        </button>
       </div>
     </aside>
   );

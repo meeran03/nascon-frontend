@@ -1,6 +1,7 @@
 import React from "react";
 import CreatePostForm from "../../components/Post/CreatePostForm";
 import Post from "../../components/Post/Post";
+import PostList from "../../components/Post/PostList";
 import MainPage from "../Main";
 import RightBar from "../Main/RightBar";
 
@@ -10,7 +11,7 @@ const Feed = () => {
       <div className="col-span-2">
         <CreatePostForm />
 
-        <Post />
+        <PostList />
       </div>
       <RightBar />
     </div>

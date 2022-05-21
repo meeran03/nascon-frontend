@@ -1,6 +1,29 @@
 import React from "react";
+import AXIOS from "../../services/AXIOS";
+import { userState } from "../../states/userState";
 
 function RightBar() {
+  const [user, setUser] = userState.use();
+  React.useEffect(() => {
+    let data = {
+      lat: user.profile.address.lattitude,
+      lng: user.profile.address.longitude,
+      radius: 50000000,
+      veteran: user.profile._id,
+    };
+    AXIOS.get("/veterans/nearby", { params: data }).then((res) => {
+      console.log(res.data);
+    });
+  }, []);
+
+  const getSearchedVeterans = (e) => {
+    AXIOS.get("/veterans", { params: { query: e.target.value } }).then(
+      (res) => {
+        console.log(res.data);
+      }
+    );
+  };
+
   return (
     <div className="hidden md:block lg:block py-8  sticky top-6">
       <input
@@ -9,10 +32,11 @@ function RightBar() {
         style={{ borderRadius: "25px" }}
         placeholder="Search"
         autocomplete="off"
+        onChange={getSearchedVeterans}
       />
       <card className=" w-96 rounded-lg shadow-lg">
         <header className="font-bold text-2xl px-5 py-4">
-          Upcoming Events
+          Connect with People
         </header>
 
         <main className="px-5">
