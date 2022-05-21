@@ -19,7 +19,7 @@ const Feed = () => {
   );
 };
 
-function MainPage() {
+function MainPage(props) {
   return (
     <div
       className="flex h-screen  dark:bg-gray-900"
@@ -30,7 +30,7 @@ function MainPage() {
       <div className="flex flex-col flex-1">
         <Header />
         <main className="h-full px-4 pb-16 overflow-y-auto">
-          <Profile />
+          {props.children}
         </main>
       </div>
     </div>

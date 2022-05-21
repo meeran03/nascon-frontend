@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Sidebar() {
+  const history = useHistory();
   return (
     <aside className="z-20 hidden w-70 mr-4 overflow-y-auto  md:block flex-shrink-0">
       <div className=" h-14 flex justify-center">
@@ -10,8 +12,8 @@ function Sidebar() {
         />
       </div>
       <div className=" mt-24 p-2 flex ">
-        <a
-          href="#"
+        <button
+          onClick={() => history.push("/profile")}
           className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
         >
           <span className="inline-flex justify-center items-center ml-4">
@@ -31,7 +33,7 @@ function Sidebar() {
             </svg>
           </span>
           <span className="ml-2 text-sm tracking-wide truncate">Profile</span>
-        </a>
+        </button>
       </div>
 
       <div className=" my-2 p-2 flex ">

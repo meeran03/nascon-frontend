@@ -2,7 +2,7 @@ import jsCookie from "js-cookie";
 import { newRidgeState } from "react-ridge-state";
 
 export const userState = newRidgeState(
-  { profile: true, token: "" },
+  { profile: true, token: false },
   {
     onSet: (newState) => {
       try {
