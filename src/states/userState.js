@@ -6,7 +6,7 @@ export const userState = newRidgeState(
   {
     onSet: (newState) => {
       try {
-        jsCookie.set("user", JSON.stringify(newState));
+        localStorage.setItem("user", JSON.stringify(newState));
       } catch (e) {}
     },
   }
@@ -15,10 +15,12 @@ export const userState = newRidgeState(
 // setInitialState fetches data from localStorage
 function setInitialState() {
   try {
-    const item = jsCookie.get("user");
+    const item = localStorage.getItem("user");
     if (item) {
       const initialState = JSON.parse(item);
       userState.set(initialState);
     }
   } catch (e) {}
 }
+
+setInitialState();

@@ -12,6 +12,8 @@ import { Redirect } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import ChatPage from "./Pages/Chat";
 import OrganizationPage from "./Pages/Organization";
+import VisitProfile from "./Pages/Profile/VisitProfile";
+import FollowerPage from "./Pages/Followers";
 function App() {
   const [user, setUser] = userState.use();
   return (
@@ -23,8 +25,14 @@ function App() {
         <Route exact path="/profile">
           {user.token === false ? <Redirect to="/login" /> : <ProfilePage />}
         </Route>
+        <Route exact path="/profile/:id">
+          {user.token === true ? <Redirect to="/login" /> : <VisitProfile />}
+        </Route>
         <Route exact path="/chat">
           {user.token === false ? <Redirect to="/login" /> : <ChatPage />}
+        </Route>
+        <Route exact path="/followers">
+          {user.token === false ? <Redirect to="/login" /> : <FollowerPage />}
         </Route>
         <Route exact path="/organizations">
           {user.token === false ? (

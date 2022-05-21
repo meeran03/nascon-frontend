@@ -4,17 +4,17 @@ import { userState } from "../../states/userState";
 
 function RightBar() {
   const [user, setUser] = userState.use();
-  React.useEffect(() => {
-    let data = {
-      lat: user.profile.address.lattitude,
-      lng: user.profile.address.longitude,
-      radius: 50000000,
-      veteran: user.profile._id,
-    };
-    AXIOS.get("/veterans/nearby", { params: data }).then((res) => {
-      console.log(res.data);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   let data = {
+  //     lat: user.profile.address.lattitude,
+  //     lng: user.profile.address.longitude,
+  //     radius: 50000000,
+  //     veteran: user.profile._id,
+  //   };
+  //   AXIOS.get("/veterans/nearby", { params: data }).then((res) => {
+  //     console.log(res.data);
+  //   });
+  // }, []);
 
   const getSearchedVeterans = (e) => {
     AXIOS.get("/veterans", { params: { query: e.target.value } }).then(
