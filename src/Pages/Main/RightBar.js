@@ -5,13 +5,15 @@ function RightBar() {
     <div className="hidden md:block lg:block py-8  sticky top-6">
       <input
         type="search"
-        className="ml-16 w-3/4 py-2 pl-4 px-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-gray-50 focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue"
+        className="mx-4 w-5/6 py-2 pl-4 px-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400 focus:bg-gray-50 focus:outline-none focus:border-blue-500 focus:text-gray-900 focus:shadow-outline-blue"
         style={{ borderRadius: "25px" }}
         placeholder="Search"
         autocomplete="off"
       />
       <card className=" w-96 rounded-lg shadow-lg">
-        <header className="font-bold text-2xl px-5 py-4">Who to follow</header>
+        <header className="font-bold text-2xl px-5 py-4">
+          Upcoming Events
+        </header>
 
         <main className="px-5">
           <content className="grid grid-cols-6">
@@ -60,7 +62,6 @@ function RightBar() {
       </card>
 
       <div className="max-w-sm rounded-lg overflow-hidden shadow-sm m-4 mt-5">
-        first trending tweet
         <div className="flex">
           <div className="flex-1">
             <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">
@@ -90,7 +91,6 @@ function RightBar() {
             </a>
           </div>
         </div>
-        second trending tweet
         <div className="flex">
           <div className="flex-1">
             <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">
@@ -120,7 +120,6 @@ function RightBar() {
             </a>
           </div>
         </div>
-        third trending tweet
         <div className="flex">
           <div className="flex-1">
             <p className="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">
@@ -150,7 +149,6 @@ function RightBar() {
             </a>
           </div>
         </div>
-        show more
         <div className="flex">
           <div className="flex-1 p-4">
             <h2 className="px-4 ml-2 w-48 font-semibold text-sm text-blue-400">

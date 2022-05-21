@@ -8,9 +8,7 @@ import MainPage from "./Pages/Main";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <MainPage />
-      </div>
+      <MainPage />
     </BrowserRouter>
   );
 }
